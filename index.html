@@ -5,15 +5,65 @@
     <link rel="icon" href="/todo-app/favicon-32x32.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TODO App</title>
+
+    <link
+      rel="stylesheet"
+      href="node_modules/modern-normalize/modern-normalize.css" />
+
     <script type="module" crossorigin src="/todo-app/index.js"></script>
+    <link rel="stylesheet" crossorigin href="/todo-app/assets/index-v4xWZN9v.css">
   </head>
   <body>
-    <header>
-  <div class="container">
-    <h1>TODO</h1>
-  </div>
+    <header class="page-header">
+  <h1 class="title">Todo</h1>
+  <button class="theme-button">
+    <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='26'%20height='26'%3e%3cpath%20fill='%23FFF'%20fill-rule='evenodd'%20d='M13%2021a1%201%200%20011%201v3a1%201%200%2011-2%200v-3a1%201%200%20011-1zm-5.657-2.343a1%201%200%20010%201.414l-2.121%202.121a1%201%200%2001-1.414-1.414l2.12-2.121a1%201%200%20011.415%200zm12.728%200l2.121%202.121a1%201%200%2001-1.414%201.414l-2.121-2.12a1%201%200%20011.414-1.415zM13%208a5%205%200%20110%2010%205%205%200%20010-10zm12%204a1%201%200%20110%202h-3a1%201%200%20110-2h3zM4%2012a1%201%200%20110%202H1a1%201%200%20110-2h3zm18.192-8.192a1%201%200%20010%201.414l-2.12%202.121a1%201%200%2001-1.415-1.414l2.121-2.121a1%201%200%20011.414%200zm-16.97%200l2.121%202.12A1%201%200%20015.93%207.344L3.808%205.222a1%201%200%20011.414-1.414zM13%200a1%201%200%20011%201v3a1%201%200%2011-2%200V1a1%201%200%20011-1z'/%3e%3c/svg%3e" alt="Sun icon" id="theme-icon" />
+  </button>
 </header>
 
+
+    <main>
+      <section class="creation-section">
+  <div class="creation-wrapper">
+    <label class="todo-label">
+      <input
+        class="todo-checkbox"
+        type="checkbox"
+        aria-hidden="true"
+        tabindex="-1" />
+      <span class="custom-checkbox" aria-hidden="true"></span>
+    </label>
+    <input class="todo-input" type="text" placeholder="Create a new todo..." />
+  </div>
+</section>
+
+      <section class="todo-list-section">
+  <div class="todo-wrapper">
+    <p class="todo-counter-text">
+      <span class="todo-counter">0</span>
+      Items Left
+    </p>
+    <button class="todo-list-button">Clear Completed</button>
+  </div>
+</section>
+
+      <section class="section-filters">
+  <div class="filters-wrapper">
+    <ul class="filters-list">
+      <li>
+        <button class="filters-button">All</button>
+      </li>
+      <li>
+        <button class="filters-button">Active</button>
+      </li>
+      <li>
+        <button class="filters-button">Completed</button>
+      </li>
+    </ul>
+  </div>
+</section>
+
+    </main>
 
   </body>
 </html>
