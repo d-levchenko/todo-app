@@ -1,14 +1,23 @@
 {
   "name": "todo-app",
-  "version": "0.0.0",
   "private": true,
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --base=/todo-app/",
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^8.0.9"
+    "glob": "^11.0.0",
+    "postcss": "^8.4.41",
+    "postcss-sort-media-queries": "^5.2.0",
+    "vite": "^5.4.6"
+  },
+  "author": "Dmytro Levchenko <dl.qubb@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "vite-plugin-full-reload": "^1.2.0",
+    "vite-plugin-html-inject": "^1.1.2"
   }
 }
