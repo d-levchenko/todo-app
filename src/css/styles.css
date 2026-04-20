@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+@import url('./reset.css');
+@import url('./base.css');
+@import url('./header.css');
+@import url('./base.css');
+@import url('./todo-creation.css');
+@import url('./todo-list.css');
+@import url('./filters.css');

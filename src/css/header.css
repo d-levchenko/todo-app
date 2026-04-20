@@ -1,0 +1,19 @@
+.page-header {
+  padding: 7.5rem 7.5rem 3rem 7.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 7rem;
+}
+
+.theme-button {
+  background-color: transparent;
+  border: none;
+}
+
+.title {
+  color: var(--light-grey-50);
+  font-size: 2.5rem;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+}

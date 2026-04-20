@@ -1,0 +1,33 @@
+.section-filters {
+  padding: 0.5rem;
+}
+
+.filters-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 25%;
+  padding: 0.5rem;
+  background-color: var(--dark-navy-900);
+}
+
+.filters-list {
+  display: flex;
+  gap: 1rem;
+}
+
+.filters-button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: var(--dark-grey-600);
+  font-weight: 700;
+
+  &.active {
+    color: var(--blue-500);
+  }
+
+  &:hover {
+    color: var(--dark-purple-100);
+  }
+}
