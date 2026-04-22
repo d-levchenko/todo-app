@@ -5,6 +5,9 @@
 .todo-wrapper {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 4px;
   padding: 0.5rem;
   background-color: var(--dark-navy-900);
   border-radius: 0.5rem;
@@ -22,4 +25,24 @@
   border: none;
   background-color: transparent;
   color: var(--dark-grey-600);
+}
+
+.todo-delete-btn {
+  background-color: transparent;
+  background-image: url('../assets/icon-cross.svg');
+  background-repeat: no-repeat;
+  border: none;
+  width: 20px;
+  height: 20px;
+}
+
+.todo-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.todo-text {
+  color: var(--light-grey-50);
 }

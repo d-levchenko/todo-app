@@ -1,0 +1,6 @@
+#bg-img {
+  width: 100%;
+  height: var(--hero-height);
+  object-fit: cover;
+  display: block;
+}

@@ -50,21 +50,104 @@
   height: var(--checkbox-size);
   border-radius: 50%;
   background: var(--dark-navy-900);
-  border: 1px solid var(--dark-navy-900);
-  display: flex;
+  border: 1px solid var(--dark-purple-600);
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
 
-  &::after {
+  &:checked {
     content: '';
     width: calc(var(--checkbox-size) * var(--checkbox-icon-scale));
     height: calc(var(--checkbox-size) * var(--checkbox-icon-scale));
     background-image: url('../assets/icon-check.svg');
+    background-repeat: no-repeat;
+    background-position: center;
     opacity: 0;
     transform: scale(0.8);
     transition:
-      opacity 0.18s ease,
-      transform 0.18s ease;
+      opacity 0.2s ease,
+      transform 0.2s ease;
   }
+}
+
+.todo-checkbox:checked + .custom-checkbox {
+  background: linear-gradient(
+    135deg,
+    var(--check-bg-start),
+    var(--check-bg-end)
+  );
+  border: none;
+}
+
+.todo-checkbox:checked + .custom-checkbox::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.todo-wrapper {
+  background-color: var(--dark-navy-900);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 1rem;
+  border-bottom: 1px solid var(--dark-purple-800);
+}
+
+.todo-text {
+  flex: 1;
+  font-size: 1rem;
+  color: var(--dark-purple-100);
+  word-break: break-word;
+}
+
+.todo-text.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.todo-delete-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--dark-gray-600);
+  font-size: 1rem;
+}
+
+.todo-delete-btn:hover {
+  color: var(--dark-purple-100);
+}
+
+.todo-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: var(--dark-gray-600);
+}
+
+.todo-list-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--dark-gray-600);
+}
+
+.todo-list-button:hover {
+  color: var(--dark-purple-100);
 }

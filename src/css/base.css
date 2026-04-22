@@ -3,7 +3,7 @@
   --check-bg-start: hsl(192, 100%, 67%);
   --check-bg-end: hsl(280, 87%, 65%);
 
-  --light-grey-50: hsl(0, 0%, 98%);
+  --light-gray-50: hsl(0, 0%, 98%);
   --light-purple-300: hsl(234, 39%, 85%);
   --light-gray-300: hsl(233, 11%, 84%);
   --light-gray-600: hsl(236, 9%, 61%);
@@ -16,11 +16,11 @@
   --dark-purple-600: hsl(235, 16%, 43%);
   --dark-purple-700: hsl(233, 14%, 35%);
   --dark-purple-800: hsl(237, 14%, 26%);
-  --dark-grey-600: hsl(236, 9%, 61%);
+  --dark-gray-600: hsl(236, 9%, 61%);
 
   --font-family: 'Josefin Sans', sans-serif;
 
-  --checkbox-size: 2rem;
+  --checkbox-size: 1.5rem;
   --checkbox-icon-scale: 0.45;
   --checkbox-gap: 1rem;
 
