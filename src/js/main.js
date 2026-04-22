@@ -1,1 +1,98 @@
 import '../css/styles.css';
+import { refs } from './refs';
+import { STORAGE_KEY } from './storage';
+
+let todos = JSON.parse(localStorage.getItem(STORAGE_KEY.todos)) || [];
+let currentFilter = 'all';
+
+function saveTodos() {
+  localStorage.setItem(STORAGE_KEY.todos, JSON.stringify(todos));
+}
+
+function updateCounter() {
+  const activeCount = todos.filter(todo => !todo.completed).length;
+  refs.todoCounter.textContent = activeCount;
+}
+
+function getFilteredTodos() {
+  if (currentFilter === 'active') {
+    return todos.filter(todo => !todo.completed);
+  }
+
+  if (currentFilter === 'completed') {
+    return todos.filter(todo => todo.completed);
+  }
+
+  return todos;
+}
+
+function renderTodos() {
+  refs.todoList.innerHTML = '';
+
+  const filteredTodos = getFilteredTodos();
+
+  filteredTodos.forEach(todo => {
+    const li = document.createElement('li');
+    li.classList.add('todo-item');
+    li.dataset.id = todo.id;
+
+    li.innerHTML = `
+      <label class="todo-label">
+        <input class="todo-checkbox" type="checkbox" ${
+          todo.completed ? 'checked' : ''
+        } />
+        <span class="custom-checkbox"></span>
+      </label>
+
+      <p class="todo-text ${todo.completed ? 'completed' : ''}">
+        ${todo.text}
+      </p>
+
+      <button class="todo-delete-btn" type="button"></button>
+    `;
+
+    refs.todoList.appendChild(li);
+  });
+
+  updateCounter();
+}
+
+function addTodo(text) {
+  const newTodo = {
+    id: Date.now(),
+    text,
+    completed: false,
+  };
+
+  todos.unshift(newTodo);
+  saveTodos();
+  renderTodos();
+}
+
+refs.todoInput.addEventListener('keydown', e => {
+  if (e.key !== 'Enter') return;
+
+  const value = refs.todoInput.value.trim();
+  if (!value) return;
+
+  addTodo(value);
+  refs.todoInput.value = '';
+});
+
+refs.creationWrapper.addEventListener('click', e => {
+  if (!e.target.classList.contains('todo-checkbox')) return;
+
+  const value = refs.todoInput.value.trim();
+
+  if (!value) {
+    e.target.checked = false;
+    return;
+  }
+
+  addTodo(value);
+  refs.todoInput.value = '';
+
+  e.target.checked = false;
+});
+
+renderTodos();
