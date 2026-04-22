@@ -11,7 +11,7 @@
       href="node_modules/modern-normalize/modern-normalize.css" />
 
     <script type="module" crossorigin src="/todo-app/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/todo-app/assets/index-v4xWZN9v.css">
+    <link rel="stylesheet" crossorigin href="/todo-app/assets/index-DsMVEkeV.css">
   </head>
   <body>
     <header class="page-header">
@@ -33,17 +33,22 @@
         tabindex="-1" />
       <span class="custom-checkbox" aria-hidden="true"></span>
     </label>
+
     <input class="todo-input" type="text" placeholder="Create a new todo..." />
   </div>
 </section>
 
       <section class="todo-list-section">
   <div class="todo-wrapper">
-    <p class="todo-counter-text">
-      <span class="todo-counter">0</span>
-      Items Left
-    </p>
-    <button class="todo-list-button">Clear Completed</button>
+    <ul class="todo-list"></ul>
+
+    <div class="todo-footer">
+      <p class="todo-counter-text">
+        <span class="todo-counter">0</span>
+        Items Left
+      </p>
+      <button class="todo-list-button">Clear Completed</button>
+    </div>
   </div>
 </section>
 
@@ -51,7 +56,7 @@
   <div class="filters-wrapper">
     <ul class="filters-list">
       <li>
-        <button class="filters-button">All</button>
+        <button class="filters-button active">All</button>
       </li>
       <li>
         <button class="filters-button">Active</button>
