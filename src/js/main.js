@@ -85,6 +85,20 @@ function toggleTodo(id) {
   renderTodos();
 }
 
+function clearCompleted() {
+  todos = todos.filter(todo => !todo.completed);
+
+  saveTodos();
+  renderTodos();
+}
+
+function setActiveFilterButton(targetBtn) {
+  const buttons = refs.filtersList.querySelectorAll('.filters-button');
+  buttons.forEach(button => button.classList.remove('active'));
+
+  targetBtn.classList.add('active');
+}
+
 refs.todoInput.addEventListener('keydown', e => {
   if (e.key !== 'Enter') return;
 
@@ -125,6 +139,19 @@ refs.todoList.addEventListener('click', e => {
   if (e.target.classList.contains('todo-checkbox')) {
     toggleTodo(todoId);
   }
+});
+
+refs.clearCompletedBtn.addEventListener('click', clearCompleted);
+
+refs.filtersList.addEventListener('click', e => {
+  if (!e.target.classList.contains('filters-button')) return;
+
+  const filter = e.target.textContent.toLowerCase();
+
+  currentFilter = filter;
+
+  setActiveFilterButton(e.target);
+  renderTodos();
 });
 
 renderTodos();
