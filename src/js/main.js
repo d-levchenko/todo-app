@@ -69,6 +69,22 @@ function addTodo(text) {
   renderTodos();
 }
 
+function deleteTodo(id) {
+  todos = todos.filter(todo => todo.id !== id);
+
+  saveTodos();
+  renderTodos();
+}
+
+function toggleTodo(id) {
+  todos = todos.map(todo =>
+    todo.id === id ? { ...todo, completed: !todo.completed } : todo,
+  );
+
+  saveTodos();
+  renderTodos();
+}
+
 refs.todoInput.addEventListener('keydown', e => {
   if (e.key !== 'Enter') return;
 
@@ -93,6 +109,22 @@ refs.creationWrapper.addEventListener('click', e => {
   refs.todoInput.value = '';
 
   e.target.checked = false;
+});
+
+refs.todoList.addEventListener('click', e => {
+  const todoItem = e.target.closest('.todo-item');
+  if (!todoItem) return;
+
+  const todoId = Number(todoItem.dataset.id);
+
+  if (e.target.classList.contains('todo-delete-btn')) {
+    deleteTodo(todoId);
+    return;
+  }
+
+  if (e.target.classList.contains('todo-checkbox')) {
+    toggleTodo(todoId);
+  }
 });
 
 renderTodos();
