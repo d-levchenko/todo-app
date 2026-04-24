@@ -109,7 +109,7 @@ function applyTheme() {
     refs.todoWrapper.classList.add('light');
     refs.creationWrapper.classList.add('light');
 
-    refs.themeIcon.src = './assets/icon-moon.svg';
+    refs.themeIcon.src = '../assets/icon-moon.svg';
     refs.themeIcon.alt = 'Moon icon';
   } else {
     document.body.classList.remove('light');
@@ -118,7 +118,7 @@ function applyTheme() {
     refs.todoWrapper.classList.remove('light');
     refs.creationWrapper.classList.remove('light');
 
-    refs.themeIcon.src = './assets/icon-sun.svg';
+    refs.themeIcon.src = '../assets/icon-sun.svg';
     refs.themeIcon.alt = 'Sun icon';
   }
 }
