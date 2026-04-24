@@ -110,7 +110,6 @@ function applyTheme() {
     refs.creationWrapper.classList.add('light');
 
     refs.themeBtn.classList.add('light');
-    refs.themeIcon.alt = 'Moon icon';
   } else {
     document.body.classList.remove('light');
 
@@ -119,7 +118,6 @@ function applyTheme() {
     refs.creationWrapper.classList.remove('light');
 
     refs.themeBtn.classList.remove('light');
-    refs.themeIcon.alt = 'Sun icon';
   }
 }
 
