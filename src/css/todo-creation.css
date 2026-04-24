@@ -12,6 +12,11 @@
   margin: 0 auto;
   width: 25%;
   padding: 1rem;
+
+  &.light {
+    background-color: var(--light-gray-300);
+    color: var(--light-gray-50);
+  }
 }
 
 .todo-label {

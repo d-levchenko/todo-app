@@ -1,3 +1,4 @@
 export const STORAGE_KEY = {
-  todos: 'todos',
+  TODO: 'todos',
+  THEME_KEY: 'theme',
 };

@@ -3,6 +3,11 @@ export const refs = {
   todoCounter: document.querySelector('.todo-counter'),
   clearCompletedBtn: document.querySelector('.todo-list-button'),
   filtersList: document.querySelector('.filters-list'),
-  todoList: document.querySelector('.todo-list'),
   creationWrapper: document.querySelector('.creation-wrapper'),
+  filtersWrapper: document.querySelector('.filters-wrapper'),
+  todoWrapper: document.querySelector('.todo-wrapper'),
+  todoList: document.querySelector('.todo-list'),
+  themeBtn: document.querySelector('.theme-button'),
+  themeIcon: document.querySelector('#theme-icon'),
+  backgroundImg: document.querySelector('#bg-img'),
 };

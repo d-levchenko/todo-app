@@ -2,11 +2,13 @@ import '../css/styles.css';
 import { refs } from './refs';
 import { STORAGE_KEY } from './storage';
 
-let todos = JSON.parse(localStorage.getItem(STORAGE_KEY.todos)) || [];
+let todos = JSON.parse(localStorage.getItem(STORAGE_KEY.TODO)) || [];
 let currentFilter = 'all';
 
+let theme = localStorage.getItem(STORAGE_KEY.THEME_KEY) || 'light';
+
 function saveTodos() {
-  localStorage.setItem(STORAGE_KEY.todos, JSON.stringify(todos));
+  localStorage.setItem(STORAGE_KEY.TODO, JSON.stringify(todos));
 }
 
 function updateCounter() {
@@ -98,6 +100,34 @@ function setActiveFilterButton(targetBtn) {
 
   targetBtn.classList.add('active');
 }
+
+function applyTheme() {
+  if (theme === 'light') {
+    document.body.classList.add('light');
+
+    refs.filtersWrapper.classList.add('light');
+    refs.todoWrapper.classList.add('light');
+    refs.creationWrapper.classList.add('light');
+
+    refs.themeIcon.src = './assets/icon-moon.svg';
+    refs.themeIcon.alt = 'Moon icon';
+  } else {
+    document.body.classList.remove('light');
+
+    refs.filtersWrapper.classList.remove('light');
+    refs.todoWrapper.classList.remove('light');
+    refs.creationWrapper.classList.remove('light');
+
+    refs.themeIcon.src = './assets/icon-sun.svg';
+    refs.themeIcon.alt = 'Sun icon';
+  }
+}
+
+refs.themeBtn.addEventListener('click', () => {
+  theme = theme === 'light' ? 'dark' : 'light';
+  localStorage.setItem(STORAGE_KEY.THEME_KEY, theme);
+  applyTheme();
+});
 
 refs.todoInput.addEventListener('keydown', e => {
   if (e.key !== 'Enter') return;
