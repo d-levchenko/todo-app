@@ -23,7 +23,7 @@ A simple todo application built with vanilla JavaScript, HTML, and CSS using Vit
 
 1. Clone the repository:
    ```bash
-   git clone <repo-url>
+   git clone git@github.com:d-levchenko/todo-app.git
    cd todo-app
    ```
 
