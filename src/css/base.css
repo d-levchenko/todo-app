@@ -17,6 +17,7 @@
   --dark-purple-700: hsl(233, 14%, 35%);
   --dark-purple-800: hsl(237, 14%, 26%);
   --dark-gray-600: hsl(236, 9%, 61%);
+  --hover-500: hsl(234, 66%, 40%);
 
   --font-family: 'Josefin Sans', sans-serif;
 
@@ -32,6 +33,7 @@
 .light {
   --light-gray-50: hsl(235, 21%, 11%);
   --dark-navy-950: hsl(236, 33%, 92%);
+  --hover-500: hsl(233, 40%, 75%);
 
   --light-gray-300: hsl(233, 11%, 84%);
 

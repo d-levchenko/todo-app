@@ -8,6 +8,5 @@ export const refs = {
   todoWrapper: document.querySelector('.todo-wrapper'),
   todoList: document.querySelector('.todo-list'),
   themeBtn: document.querySelector('.theme-button'),
-  themeIcon: document.querySelector('#theme-icon'),
   backgroundImg: document.querySelector('#bg-img'),
 };

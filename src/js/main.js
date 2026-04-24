@@ -1,8 +1,6 @@
 import '../css/styles.css';
 import { refs } from './refs';
 import { STORAGE_KEY } from './storage';
-import light from '../assets/icon-sun.svg';
-import dark from '../assets/icon-moon.svg';
 
 let todos = JSON.parse(localStorage.getItem(STORAGE_KEY.TODO)) || [];
 let currentFilter = 'all';
@@ -111,7 +109,7 @@ function applyTheme() {
     refs.todoWrapper.classList.add('light');
     refs.creationWrapper.classList.add('light');
 
-    refs.themeIcon.src = dark;
+    refs.themeBtn.classList.add('light');
     refs.themeIcon.alt = 'Moon icon';
   } else {
     document.body.classList.remove('light');
@@ -120,7 +118,7 @@ function applyTheme() {
     refs.todoWrapper.classList.remove('light');
     refs.creationWrapper.classList.remove('light');
 
-    refs.themeIcon.src = light;
+    refs.themeBtn.classList.remove('light');
     refs.themeIcon.alt = 'Sun icon';
   }
 }
