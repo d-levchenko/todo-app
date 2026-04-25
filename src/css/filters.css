@@ -6,9 +6,14 @@
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  width: 25%;
+  width: 320px;
   padding: 0.5rem;
   background-color: var(--dark-navy-900);
+  border-radius: 8px;
+
+  @media screen and (min-width: 768px) {
+    width: 50%;
+  }
 
   &.light {
     background-color: var(--light-gray-300);
@@ -28,6 +33,10 @@
   color: var(--dark-grey-600);
   font-weight: 700;
   transition: color 0.2s ease;
+
+  @media screen and (max-width: 767px) {
+    font-size: 0.9rem;
+  }
 
   &.active {
     color: var(--blue-500);

@@ -54,11 +54,19 @@ body {
   background-color: var(--dark-navy-950);
   color: var(--light-gray-50);
 
-  background-image: url('../assets/bg-desktop-dark.jpg');
+  background-image: url('../assets/bg-mobile-dark.jpg');
   background-size: contain;
   background-repeat: no-repeat;
 
+  @media screen and (min-width: 768px) {
+    background-image: url('../assets/bg-desktop-dark.jpg');
+  }
+
   &.light {
-    background-image: url('../assets/bg-desktop-light.jpg');
+    background-image: url('../assets/bg-mobile-light.jpg');
+
+    @media screen and (min-width: 768px) {
+      background-image: url('../assets/bg-desktop-light.jpg');
+    }
   }
 }

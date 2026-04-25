@@ -10,8 +10,12 @@
   background-color: var(--dark-navy-900);
   border-radius: 0.5rem;
   margin: 0 auto;
-  width: 25%;
+  width: 320px;
   padding: 1rem;
+
+  @media screen and (min-width: 768px) {
+    width: 50%;
+  }
 
   &.light {
     background-color: var(--light-gray-300);
@@ -37,8 +41,8 @@
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
-  transition: background 250ms linear box-shadow 250ms linear transform 250ms
-    linear;
+  transition: background-color 250ms linear box-shadow 250ms linear transform
+    250ms linear;
 }
 
 .todo-input {
@@ -56,32 +60,30 @@
   border-radius: 50%;
   background: var(--dark-navy-900);
   border: 1px solid var(--dark-purple-600);
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition:
+    background 200ms ease,
+    opacity 200ms ease,
+    transform 200ms ease;
 
   &:checked {
     content: '';
     width: calc(var(--checkbox-size) * var(--checkbox-icon-scale));
     height: calc(var(--checkbox-size) * var(--checkbox-icon-scale));
-    background-image: url('../assets/icon-check.svg');
-    background-repeat: no-repeat;
-    background-position: center;
     opacity: 0;
     transform: scale(0.8);
-    transition:
-      opacity 0.2s ease,
-      transform 0.2s ease;
   }
 }
 
 .todo-checkbox:checked + .custom-checkbox {
-  background: linear-gradient(
-    135deg,
-    var(--check-bg-start),
-    var(--check-bg-end)
-  );
+  background-image: url('../assets/icon-check.svg');
+  background-size: 2vh;
+  background-repeat: no-repeat;
+  background-position: center;
+
   border: none;
 }
 
@@ -117,11 +119,11 @@
   font-size: 1rem;
   color: var(--dark-purple-100);
   word-break: break-word;
-}
 
-.todo-text.completed {
-  text-decoration: line-through;
-  opacity: 0.5;
+  &.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
 }
 
 .todo-delete-btn {

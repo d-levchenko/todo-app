@@ -12,8 +12,12 @@
   background-color: var(--dark-navy-900);
   border-radius: 0.5rem;
   margin: 0 auto;
-  width: 25%;
+  width: 320px;
   padding: 1rem;
+
+  @media screen and (min-width: 768px) {
+    width: 50%;
+  }
 
   &.light {
     background-color: var(--light-gray-300);
@@ -43,9 +47,13 @@
 
 .todo-item {
   display: flex;
-  gap: 10px;
+  gap: 30px;
   align-items: center;
   justify-content: center;
+
+  @media screen and (min-width: 768px) {
+    gap: 15px;
+  }
 }
 
 .todo-text {
